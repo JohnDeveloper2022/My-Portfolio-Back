@@ -35,5 +35,10 @@ public class SkillService implements ISkillService {
     public List<Skill> mostrarSkills() {
         return skillRepo.findAll();
     }
+
+    @Override
+    public void editarSkill(Skill sk) {
+        skillRepo.save(sk);
+    }
     
 }

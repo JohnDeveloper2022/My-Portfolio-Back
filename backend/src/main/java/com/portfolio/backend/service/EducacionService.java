@@ -35,5 +35,10 @@ public class EducacionService implements IEducacionService {
     public List<Educacion> traerEstudios() {
         return eduRepo.findAll();
     }
+
+    @Override
+    public void editarEstudio(Educacion edu) {
+        eduRepo.save(edu);
+    }
     
 }

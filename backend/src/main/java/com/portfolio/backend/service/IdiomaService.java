@@ -35,5 +35,10 @@ public class IdiomaService implements IIdiomaService {
     public List<Idioma> mostrarIdiomas() {
         return idioRepo.findAll();
     }
+
+    @Override
+    public void editarIdioma(Idioma idiom) {
+        idioRepo.save(idiom);
+    }
     
 }

@@ -12,6 +12,8 @@ public interface ISkillService {
     
     public void crearSkill (Skill sk);
     
+    public void editarSkill (Skill sk);
+    
     public void borrarSkill (int id);
     
     public Skill verSkill (int id);

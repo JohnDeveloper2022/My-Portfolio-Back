@@ -12,6 +12,8 @@ public interface IIdiomaService {
     
     public void agregarIdioma (Idioma idiom);
     
+    public void editarIdioma (Idioma idiom);
+    
     public void borrarIdioma (int id);
     
     public Idioma verIdioma (int id);

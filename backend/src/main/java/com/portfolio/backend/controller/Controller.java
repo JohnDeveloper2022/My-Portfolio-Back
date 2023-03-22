@@ -8,6 +8,7 @@ import com.portfolio.backend.model.Persona;
 import com.portfolio.backend.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin
 @RestController
 public class Controller {
     
@@ -28,13 +30,13 @@ public class Controller {
         persoServ.crearPersona(per);
     }
     
-    @GetMapping ("/ver/persona")
+    @GetMapping ("/ver/persona/{id}")
     @ResponseBody
-    public Persona verPersona (int id) {
+    public Persona verPersona (@PathVariable int id) {
         return persoServ.verPersona(id);
     }
     
-    @PutMapping ("/edit/persona")
+    @PutMapping ("/editar/persona")
     public void editarPersona (@RequestBody Persona per) {
         persoServ.editarPersona(per);
     }
@@ -45,7 +47,7 @@ public class Controller {
         return persoServ.traerPersonas();
     }
     
-    @DeleteMapping ("delete/{id}")
+    @DeleteMapping ("delete/persona/{id}")
     public void borrarPersona (@PathVariable int id) {
         persoServ.borrarPersona(id);
     }

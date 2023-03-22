@@ -12,6 +12,8 @@ public interface IEducacionService {
     
     public void crearEstudios (Educacion edu);
     
+    public void editarEstudio (Educacion edu);
+    
     public void borrarEstudios (int id);
     
     public Educacion verEstudio (int id);
