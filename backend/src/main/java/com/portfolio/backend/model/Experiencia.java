@@ -20,8 +20,10 @@ public class Experiencia {
     private int id;
     private String nombre_empresa;
     private String cargo;
-    private String fecha_inicio;
-    private String fecha_fin;
+    private String mes_inicio;
+    private String mes_fin;
+    private int año_inicio;
+    private int año_fin;
     private String ubicacion;
     private String descripcion;
     private int persona_id;
@@ -29,16 +31,20 @@ public class Experiencia {
     public Experiencia() {
     }
 
-    public Experiencia(int id, String nombre_empresa, String cargo, String fecha_inicio, String fecha_fin, String ubicacion, String descripcion, int persona_id) {
+    public Experiencia(int id, String nombre_empresa, String cargo, String mes_inicio, String mes_fin, int año_inicio, int año_fin, String ubicacion, String descripcion, int persona_id) {
         this.id = id;
         this.nombre_empresa = nombre_empresa;
         this.cargo = cargo;
-        this.fecha_inicio = fecha_inicio;
-        this.fecha_fin = fecha_fin;
+        this.mes_inicio = mes_inicio;
+        this.mes_fin = mes_fin;
+        this.año_inicio = año_inicio;
+        this.año_fin = año_fin;
         this.ubicacion = ubicacion;
         this.descripcion = descripcion;
         this.persona_id = persona_id;
     }
+
+    
 
   
 }
