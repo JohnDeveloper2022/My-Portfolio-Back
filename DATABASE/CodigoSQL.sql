@@ -1,1 +1,1 @@
-select * from proyecto;
+select * from skill;
