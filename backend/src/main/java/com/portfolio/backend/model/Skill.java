@@ -19,17 +19,18 @@ public class Skill {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nombre_skill;
+    private String nivel;
     private int persona_id;
 
     public Skill() {
     }
 
-    public Skill(int id, String nombre_skill, int persona_id) {
+    public Skill(int id, String nombre_skill, String nivel, int persona_id) {
         this.id = id;
         this.nombre_skill = nombre_skill;
+        this.nivel = nivel;
         this.persona_id = persona_id;
     }
-    
     
     
 }
