@@ -1,1 +1,1 @@
-SELECT * from persona;
+select * from skill;

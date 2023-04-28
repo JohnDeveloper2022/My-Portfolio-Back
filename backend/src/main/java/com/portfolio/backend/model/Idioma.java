@@ -19,17 +19,18 @@ public class Idioma {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nombre_idioma;
+    private String nivel;
     private int persona_id;
 
     public Idioma() {
     }
 
-    public Idioma(int id, String nombre_idioma, int persona_id) {
+    public Idioma(int id, String nombre_idioma, String nivel, int persona_id) {
         this.id = id;
         this.nombre_idioma = nombre_idioma;
+        this.nivel = nivel;
         this.persona_id = persona_id;
     }
-
     
     
 }
