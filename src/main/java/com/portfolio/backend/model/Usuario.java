@@ -20,17 +20,17 @@ public class Usuario {
     private int id;
     private String username;
     private String password;
-    
-    public int getId () {
+
+    public int getId() {
         return id;
     }
-    
-    public String getUsername () {
+
+    public String getUsername() {
         return username;
     }
-    
-    public String getPassword () {
+
+    public String getPassword() {
         return password;
-    }
+    }    
     
 }

@@ -18,8 +18,6 @@ public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String username;
-    private String password;
     private String nombre;
     private String apellido;
     private String profesion;
@@ -31,10 +29,8 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(int id, String username, String password, String nombre, String apellido, String profesion, String email, String telefono, String direccion, String sobre_mi) {
+    public Persona(int id, String nombre, String apellido, String profesion, String email, String telefono, String direccion, String sobre_mi) {
         this.id = id;
-        this.username = username;
-        this.password = password;
         this.nombre = nombre;
         this.apellido = apellido;
         this.profesion = profesion;
