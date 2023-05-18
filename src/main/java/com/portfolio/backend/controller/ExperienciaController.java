@@ -18,35 +18,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://portfolio-johnny-f39f6.web.app")
 @RestController
 public class ExperienciaController {
     
     @Autowired
     private IExperienciaService expeServ;
     
-    @PostMapping ("/new/experiencia")
+    @PostMapping ("/experiencias")
     public void crearExperiencia (@RequestBody Experiencia exp) {
         expeServ.crearExperiencia(exp);
     }
     
-    @DeleteMapping ("/delete/experiencia/{id}")
+    @DeleteMapping ("/experiencias/{id}")
     public void borrarExperiencia (@PathVariable int id) {
         expeServ.borrarExperiencia(id);
     }
     
-    @GetMapping ("/ver/experiencia/{id}")
+    @GetMapping ("/experiencias/{id}")
     @ResponseBody
     public Experiencia verExperiencia (@PathVariable int id) {
         return expeServ.verExperiencia(id);
     }
     
-    @PutMapping ("/editar/experiencia")
+    @PutMapping ("/experiencias")
     public void editarExperiencia (@RequestBody Experiencia exp) {
         expeServ.editarExperiencia(exp);
     }           
  
-    @GetMapping ("/traer/experiencias")
+    @GetMapping ("/experiencias")
     @ResponseBody
     public List <Experiencia> traerExperiencias () {
         return expeServ.traerExperiencias();

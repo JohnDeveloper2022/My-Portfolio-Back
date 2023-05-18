@@ -18,35 +18,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://portfolio-johnny-f39f6.web.app")
 @RestController
 public class IdiomaController {
     
     @Autowired
     private IIdiomaService idioServ;
     
-    @PostMapping ("/new/idioma")
+    @PostMapping ("/idiomas")
     public void agregarIdioma (@RequestBody Idioma idiom) {
         idioServ.agregarIdioma(idiom);
     }
     
-    @DeleteMapping ("/delete/idioma/{id}")
+    @DeleteMapping ("/idiomas/{id}")
     public void borrarIdioma (@PathVariable int id) {
         idioServ.borrarIdioma(id);
     }
     
-    @GetMapping ("/ver/idioma/{id}")
+    @GetMapping ("/idiomas/{id}")
     @ResponseBody
     public Idioma verIdioma (@PathVariable int id) {
         return idioServ.verIdioma(id);
     }
     
-    @PutMapping ("/editar/idioma")
+    @PutMapping ("/idiomas")
     public void editarIdioma (@RequestBody Idioma idiom) {
         idioServ.editarIdioma(idiom);
     }
     
-    @GetMapping ("/traer/idiomas")
+    @GetMapping ("/idiomas")
     @ResponseBody
     public List <Idioma> mostrarIdiomas () {
         return idioServ.mostrarIdiomas();
