@@ -18,36 +18,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://portfolio-johnny-f39f6.web.app")
 @RestController
 public class Controller {
     
     @Autowired
     private IPersonaService persoServ;
     
-    @PostMapping ("/new/persona")
+    @PostMapping ("/persona")
     public void agregarPersona (@RequestBody Persona per) {
         persoServ.crearPersona(per);
     }
     
-    @GetMapping ("/ver/persona/{id}")
+    @GetMapping ("/persona/{id}")
     @ResponseBody
     public Persona verPersona (@PathVariable int id) {
         return persoServ.verPersona(id);
     }
     
-    @PutMapping ("/editar/persona")
+    @PutMapping ("/persona")
     public void editarPersona (@RequestBody Persona per) {
         persoServ.editarPersona(per);
     }
             
-    @GetMapping ("/traer/personas")
+    @GetMapping ("/persona")
     @ResponseBody
     public List <Persona> traerPersonas () {
         return persoServ.traerPersonas();
     }
     
-    @DeleteMapping ("delete/persona/{id}")
+    @DeleteMapping ("/persona/{id}")
     public void borrarPersona (@PathVariable int id) {
         persoServ.borrarPersona(id);
     }

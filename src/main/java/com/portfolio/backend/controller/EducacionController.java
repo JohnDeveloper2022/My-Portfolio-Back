@@ -18,35 +18,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://portfolio-johnny-f39f6.web.app")
 @RestController
 public class EducacionController {
     
     @Autowired
     private IEducacionService eduServ;
     
-    @PostMapping ("/new/estudio")
+    @PostMapping ("/estudios")
     public void crearEstudios (@RequestBody Educacion edu) {
         eduServ.crearEstudios(edu);
     }
     
-    @DeleteMapping ("/delete/estudio/{id}")
+    @DeleteMapping ("/estudios/{id}")
     public void borrarEstudios (@PathVariable int id) {
         eduServ.borrarEstudios(id);
     }
     
-    @GetMapping ("/ver/estudio/{id}")
+    @GetMapping ("/estudios/{id}")
     @ResponseBody
     public Educacion verEstudio (@PathVariable int id) {
         return eduServ.verEstudio(id);
     }
     
-    @PutMapping ("/editar/estudio")
+    @PutMapping ("/estudios")
     public void editarEstudio (@RequestBody Educacion edu) {
         eduServ.editarEstudio(edu);
     }
     
-    @GetMapping ("/traer/estudios")
+    @GetMapping ("/estudios")
     @ResponseBody
     public List <Educacion> traerEstudios () {
         return eduServ.traerEstudios();

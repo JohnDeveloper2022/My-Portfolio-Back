@@ -18,35 +18,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://portfolio-johnny-f39f6.web.app")
 @RestController
 public class ProyectoController {
     
     @Autowired
     private IProyectoService proyeServ;
     
-    @PostMapping ("/new/proyecto")
+    @PostMapping ("/proyectos")
     public void agregarProyecto (@RequestBody Proyecto pro) {
         proyeServ.agregarProyecto(pro);
     }
     
-    @DeleteMapping ("/delete/proyecto/{id}")
+    @DeleteMapping ("/proyectos/{id}")
     public void borrarProyecto (@PathVariable int id) {
         proyeServ.borrarProyecto(id);
     }
     
-    @GetMapping ("/ver/proyecto/{id}")
+    @GetMapping ("/proyectos/{id}")
     @ResponseBody
     public Proyecto verProyecto (@PathVariable int id) {
         return proyeServ.verProyecto(id);
     }
     
-    @PutMapping ("/editar/proyecto")
+    @PutMapping ("/proyectos")
     public void editarProyecto (@RequestBody Proyecto pro) {
         proyeServ.editarProyecto(pro);
     }
     
-    @GetMapping ("/mostrar/proyectos")
+    @GetMapping ("/proyectos")
     @ResponseBody
     public List <Proyecto> traerProyectos () {
         return proyeServ.mostrarProyectos();
